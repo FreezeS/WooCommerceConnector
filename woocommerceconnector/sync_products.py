@@ -630,7 +630,8 @@ def get_erpnext_items(price_list):
             `tabItem`.`woocommerce_variant_id`, 
             `tabItem`.`sync_qty_with_woocommerce`, 
             `tabItem`.`weight_per_unit`, 
-            `tabItem`.`weight_uom`
+            `tabItem`.`weight_uom`,
+            `tabItem`.`stock_keeping_unit`
         FROM `tabItem`, `tabItem Price`
         WHERE `tabItem Price`.`price_list` = '%s' 
         AND `tabItem`.`name` = `tabItem Price`.`item_code`
