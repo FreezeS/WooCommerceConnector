@@ -500,7 +500,7 @@ def get_item_code(woocommerce_item):
         # variation
         item_code = frappe.db.get_value(
             "Item",
-            {"woocommerce_product_id": woocommerce_item.get("variation_id")},
+            {"woocommerce_variant_id": woocommerce_item.get("variation_id")},
             "item_code",
         )
     else:
