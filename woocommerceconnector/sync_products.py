@@ -346,6 +346,9 @@ def update_item(item_details, item_dict):
     if item_dict.get("warehouse"):
         del item_dict["warehouse"]
 
+    if item_dict.get("valuation_method"):
+        del item_dict["valuation_method"]
+
     del item_dict["description"]
     del item_dict["item_code"]
     del item_dict["variant_of"]
@@ -888,6 +891,10 @@ def get_price_and_stock_details(item, warehouse, price_list):
         {"item_code": item.get("item_code"), "warehouse": warehouse},
         "reserved_qty",
     )
+    if actual_qty is None:
+        actual_qty = 0
+    if reserved_qty is None:
+        reserved_qty = 0
 
     qty = actual_qty - reserved_qty
 
